@@ -8,13 +8,11 @@ require('dotenv').config();
 
 var app = express();
 
-app.set('view engine', 'html');
 app.use(logger('dev'));
 app.use(cors());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
-app.use(express.static(path.join(__dirname, 'client')));
 
 app.use('/', require('./routes/index'));
 
