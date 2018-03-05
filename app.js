@@ -8,6 +8,7 @@ require('dotenv').config();
 
 var app = express();
 
+app.set('view engine', 'html');
 app.use(logger('dev'));
 app.use(cors());
 app.use(bodyParser.json());
