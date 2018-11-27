@@ -24,6 +24,20 @@ router.get('/tweets/south-lamar', function(req, res, next) {
   });
 });
 
+router.get('/tweets/slaughter-lane', function(req, res, next) {
+  twitter.get('statuses/user_timeline', { screen_name: "AlamoAlerts_006", count: "6" }, function(error, tweets, response){
+    if(error) throw error;
+    res.send(tweets);
+  });
+});
+
+router.get('/tweets/lakeline', function(req, res, next) {
+  twitter.get('statuses/user_timeline', { screen_name: "AlamoAlerts_007", count: "6" }, function(error, tweets, response){
+    if(error) throw error;
+    res.send(tweets);
+  });
+});
+
 router.get('/tweets/mueller', function(req, res, next) {
   twitter.get('statuses/user_timeline', { screen_name: "AlamoAlerts_008", count: "6" }, function(error, tweets, response){
     if(error) throw error;
